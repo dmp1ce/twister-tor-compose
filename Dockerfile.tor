@@ -1,0 +1,28 @@
+FROM alpine:edge
+MAINTAINER David Parrish <daveparrish@tutanota.com>
+
+ENV EXIT_NODES ""
+
+EXPOSE 9050
+
+ADD ./tor-entrypoint.sh /entrypoint.sh
+ADD ./torrc /tmp/torrc
+
+RUN apk update && \
+    apk upgrade && \
+    apk add --update-cache \
+      --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
+      --allow-untrusted tor && \
+    rm /var/cache/apk/* && \
+    chmod a+w /tmp/torrc && \
+    # Make volume writable
+    mkdir -p /var/run/tor && \
+    chown -Rh tor. /var/run/tor && \
+    chmod 0750 /var/run/tor
+
+
+VOLUME ["/var/run/tor"]
+
+USER tor
+
+CMD /entrypoint.sh

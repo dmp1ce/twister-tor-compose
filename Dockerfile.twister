@@ -1,0 +1,4 @@
+FROM miguelfreitas/twister
+MAINTAINER David Parrish <daveparrish@tutanota.com>
+
+ADD twister-entrypoint.sh /twister-core/docker-entrypoint.sh

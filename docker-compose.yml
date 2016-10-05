@@ -1,0 +1,15 @@
+version: '2'
+services:
+  twister:
+    #image: miguelfreitas/twister
+    build:
+      dockerfile: Dockerfile.twister
+      context: .
+    ports:
+      - "28332:28332"
+  tor:
+    build:
+      dockerfile: Dockerfile.tor
+      context: .
+        
+# vi: set tabstop=2 expandtab syntax=yaml:
