@@ -51,4 +51,4 @@ Stopping twistercompose_tor_1 ... done
 
 ## Finding seeds
 
-Currently, using this Tor configuration, my client is unable to find any nodes to communication with the network.
+Currently, using this Tor configuration, Twister isn't able to find other nodes quickly. I had to wait around 20 minutes to find one node! I hope you have better luck, or you can try to add a seed node.
