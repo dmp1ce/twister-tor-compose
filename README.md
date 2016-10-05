@@ -11,7 +11,7 @@ Starting twistercompose_tor_1
 Starting twistercompose_twister_1
 ```
 
-Then go to `http://localhost:28332/` in your browser.
+Then go to `http://user:pwd@localhost:28332/` in your browser.
 
 ### Follow logs
 
